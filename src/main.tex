@@ -1,0 +1,40 @@
+\documentclass[a5paper]{scrbook}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[landscape]{geometry} % Landscape view
+
+% BEGIN GUITAR CHORDS
+% Doc available here : (http://tug.ctan.org/info/latex4musicians/latex4musicians.pdf)
+% (http://mirrors.ibiblio.org/CTAN/macros/latex/contrib/guitarchordschemes/guitarchordschemes_en.pdf)
+\usepackage{guitarchordschemes}
+%\thispagestyle{empty}
+
+\input{chords.tex}
+
+% END GUITAR CHORDS
+
+% BEGIN TITLE
+%\title{Chansonnier + Guitare}
+%\author{Barasingha}
+%\date{2020}
+% END TITLE
+
+
+\begin{document}
+
+
+\usebox{\A}
+\usebox{\Aalt}
+\usebox{\Afive}
+\usebox{\Aseven}
+\usebox{\Asevenalt}
+\usebox{\Am}
+\usebox{\Amalt}
+\usebox{\Amseven}
+\usebox{\Amsevenalt}
+\usebox{\Amajseven}
+\usebox{\Amajsevenalt}
+
+
+\end{document}
