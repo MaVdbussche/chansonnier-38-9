@@ -263,3 +263,7 @@ TSWLatexianTemp*
 
 # standalone packages
 *.sta
+
+# IntellijJ IDEA
+*.iml
+.idea/

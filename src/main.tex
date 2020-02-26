@@ -1,18 +1,12 @@
+%! Author = Barasingha
+%! Date = 26/02/20
+
 \documentclass[a5paper]{scrbook}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
 
-\usepackage[landscape]{geometry} % Landscape view
+\input{header.tex}
 
-% BEGIN GUITAR CHORDS
-% Doc available here : (http://tug.ctan.org/info/latex4musicians/latex4musicians.pdf)
-% (http://mirrors.ibiblio.org/CTAN/macros/latex/contrib/guitarchordschemes/guitarchordschemes_en.pdf)
-\usepackage{guitarchordschemes}
-%\thispagestyle{empty}
-
-\input{chords.tex}
-
-% END GUITAR CHORDS
+\input{chords-A.tex}
+\input{chords-B.tex}
 
 % BEGIN TITLE
 %\title{Chansonnier + Guitare}
@@ -24,17 +18,42 @@
 \begin{document}
 
 
+\chapter*{Bibliothèques d'accords}
+INSERER TEXTE D'INTRO (MAX UNE PAGE AVANT ACCORDS)
+\paragraph{Notations} Dans tout ce chansonnier, les notes suivent la dénomination anglaise; ci-dessous une liste des équivalents français.
+\newline\newline
+\begin{tabular}{||c||c||c||c||c||c||c||}
+    \hline
+    Do & Ré & Mi & Fa & Sol & La & Si\\
+    \hline
+    C & D & E & F & G & A & B\\
+    \hline
+\end{tabular}
+\paragraph{Note} Pour tous les accords ci-dessous, la guitare est accordée de manière standard (EADGBE)
+
+\newpage
 \usebox{\A}
 \usebox{\Aalt}
+\usebox{\Am}
+\usebox{\Amalt}
 \usebox{\Afive}
 \usebox{\Aseven}
 \usebox{\Asevenalt}
-\usebox{\Am}
-\usebox{\Amalt}
-\usebox{\Amseven}
-\usebox{\Amsevenalt}
 \usebox{\Amajseven}
 \usebox{\Amajsevenalt}
+\usebox{\Amseven}
+\usebox{\Amsevenalt}
+\usebox{\Asusfour}
+\usebox{\Asusfouralt}
 
+\usebox{\B}
+\usebox{\Bm}
+\usebox{\Bseven}
+\usebox{\Bsevenalt}
+\usebox{\Bmajseven}
+\usebox{\Bmseven}
+\usebox{\Bsusfour}
+\usebox{\Bsustwo}
+\usebox{\Bsevensusfour}
 
 \end{document}

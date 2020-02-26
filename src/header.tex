@@ -1,0 +1,32 @@
+%! Author = Barasingha
+%! Date = 26/02/20
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[landscape]{geometry} % Landscape view
+
+% BEGIN GUITAR CHORDS
+% Doc available here : (http://tug.ctan.org/info/latex4musicians/latex4musicians.pdf)
+% (http://mirrors.ibiblio.org/CTAN/macros/latex/contrib/guitarchordschemes/guitarchordschemes_en.pdf)
+\usepackage{guitarchordschemes}
+%\thispagestyle{empty}
+
+% general chords parameters
+\setchordscheme{
+    x-unit=8pt, % chord size, x (before rotation)
+    y-unit=8pt, % chord size, y (before rotation)
+    rotate=270,
+    finger-format=\footnotesize, % fingering font
+    position-format=\footnotesize, % position number font
+    name-format=\bfseries, % chord name font
+    name-below=true,
+    name-distance=.01em,
+    strings=6,
+    finger-radius={.3175},
+    ringing-style={circle, minimum width=16pt, draw, inner sep=0pt},
+    muted-style={cross out, draw, minimum size=5pt, inner sep=0pt, outer sep=0pt},
+    tuning={,,,,,},
+    restrict-bounding-box=false
+}
+% END GUITAR CHORDS
