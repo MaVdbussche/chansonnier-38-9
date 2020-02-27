@@ -12,7 +12,6 @@
 % Doc available here : (http://tug.ctan.org/info/latex4musicians/latex4musicians.pdf)
 % (http://mirrors.ibiblio.org/CTAN/macros/latex/contrib/guitarchordschemes/guitarchordschemes_en.pdf)
 \usepackage{guitarchordschemes}
-%\thispagestyle{empty}
 
 % general chords parameters
 \setchordscheme{
@@ -32,3 +31,6 @@
     restrict-bounding-box=false
 }
 % END GUITAR CHORDS
+
+% For actual song texts. see (https://ctan.org/pkg/songs)
+\usepackage[chorded]{songs} % use [lyrics] instead of [chorded] to omit all chords in output file
