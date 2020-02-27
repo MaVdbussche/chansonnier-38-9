@@ -25,6 +25,17 @@
         mute = {6} % muted strings
     ]}
 
+\newsavebox{\Bfive}
+\savebox{\Bfive}{
+    \chordscheme[ % define the chord
+        name = B\textsuperscript{5}, % chord name
+        position = 2,
+        finger = {1/5},
+        finger = {3/4}, % fret/string:label
+        finger = {3/3}, % fret/string:label
+        mute = {1,2,6} % muted strings
+    ]}
+
 \newsavebox{\Bseven}
 \savebox{\Bseven}{
     \chordscheme[ % define the chord
@@ -40,7 +51,7 @@
 \newsavebox{\Bsevenalt}
 \savebox{\Bsevenalt}{
     \chordscheme[ % define the chord
-        name = B\textsuperscript{7} (alt), % chord name
+        name = B\textsuperscript{7}(alt), % chord name
         position = 2, % first fret position
         barre = 1/1-5, % fret/string range:label
         finger = {3/4}, % fret/string:label
@@ -83,6 +94,18 @@
         mute = {6} % muted strings
     ]}
 
+\newsavebox{\Baddnine}
+\savebox{\Baddnine}{
+    \chordscheme[ % define the chord
+        name = Badd\textsuperscript{9}, % chord name
+        position = 7, % first fret position
+        finger = {3/4}, % fret/string:label
+        finger = {2/3}, % fret/string:label
+        finger = {1/2}, % fret/string:label
+        finger = {3/1}, % fret/string:label
+        mute = {5,6} % muted strings
+    ]}
+
 \newsavebox{\Bsustwo}
 \savebox{\Bsustwo}{
     \chordscheme[ % define the chord
@@ -103,4 +126,26 @@
         finger = {3/4}, % fret/string:label
         finger = {4/2}, % fret/string:label
         mute = {6} % muted strings
+    ]}
+
+\newsavebox{\Bsevensharpnine}
+\savebox{\Bsevensharpnine}{
+    \chordscheme[ % define the chord
+        name = B\textsuperscript{7}\#\textsuperscript{9}, % chord name
+        finger = {2/5}, % fret/string:label
+        finger = {1/4}, % fret/string:label
+        finger = {2/3}, % fret/string:label
+        finger = {3/2}, % fret/string:label
+        mute = {1,6} % muted strings
+    ]}
+
+\newsavebox{\Bnine}
+\savebox{\Bnine}{
+    \chordscheme[ % define the chord
+        name = B\textsuperscript{9}, % chord name
+        finger = {2/5}, % fret/string:label
+        finger = {1/4}, % fret/string:label
+        finger = {2/3}, % fret/string:label
+        finger = {2/2}, % fret/string:label
+        mute = {1,6} % muted strings
     ]}

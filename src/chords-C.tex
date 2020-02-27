@@ -15,7 +15,7 @@
 \newsavebox{\Calt}
 \savebox{\Calt}{
     \chordscheme[ % define the chord
-        name = C (alt), % chord name
+        name = C(alt), % chord name
         position = 3, % first fret position
         barre = 1/1-5, % fret/string range:label
         finger = {3/4}, % fret/string:label
@@ -28,11 +28,23 @@
 \savebox{\Cm}{
     \chordscheme[ % define the chord
         name = Cm, % chord name
+        position = 3,
         barre = 1/1-5,
         finger = {3/4},
         finger = {3/3}, % fret/string:label
         finger = {2/2}, % fret/string:label
         mute = {6} % muted strings
+    ]}
+
+\newsavebox{\Cfive}
+\savebox{\Cfive}{
+    \chordscheme[
+        name = C\textsuperscript{5},
+        position = 3,
+        finger = {1/5},
+        finger = {3/4},
+        finger = {3/3},
+        mute = {6,2,1}
     ]}
 
 \newsavebox{\Cseven}
@@ -49,7 +61,7 @@
 \newsavebox{\Csevenalt}
 \savebox{\Csevenalt}{
     \chordscheme[ % define the chord
-        name = C\textsuperscript{7} (alt), % chord name
+        name = C\textsuperscript{7}(alt), % chord name
         position = 3,
         barre = 1/1-5,
         finger = {3/4},
@@ -70,7 +82,7 @@
 \newsavebox{\Cmajsevenalt}
 \savebox{\Cmajsevenalt}{
     \chordscheme[ % define the chord
-        name = Cmaj\textsuperscript{7} (alt), % chord name
+        name = Cmaj\textsuperscript{7}(alt), % chord name
         position = 3, % first fret position
         barre = 1/1-5, % fret/string range:label
         finger = {3/4}, % fret/string:label
@@ -113,6 +125,18 @@
         mute = {6} % muted strings
     ]}
 
+\newsavebox{\Caddninealt}
+\savebox{\Caddninealt}{
+    \chordscheme[ % define the chord
+        name = Cadd\textsuperscript{9}(alt), % chord name
+        position = 8,
+        finger = {3/4}, % fret/string:label
+        finger = {2/3}, % fret/string:label
+        finger = {1/2}, % fret/string:label
+        finger = {3/1}, % fret/string:label
+        mute = {5,6} % muted strings
+    ]}
+
 \newsavebox{\Csustwo}
 \savebox{\Csustwo}{
     \chordscheme[ % define the chord
@@ -133,4 +157,28 @@
         finger = {3/4}, % fret/string:label
         finger = {4/2}, % fret/string:label
         mute = {6} % muted strings
+    ]}
+
+\newsavebox{\Csevensharpnine}
+\savebox{\Csevensharpnine}{
+    \chordscheme[ % define the chord
+        name = C\textsuperscript{7}\#\textsuperscript{9}, % chord name
+        position = 2, % first fret position
+        finger = {2/5}, % fret/string:label
+        finger = {1/4}, % fret/string:label
+        finger = {2/3}, % fret/string:label
+        finger = {3/2}, % fret/string:label
+        mute = {1,6} % muted strings
+    ]}
+
+\newsavebox{\Cnine}
+\savebox{\Cnine}{
+    \chordscheme[ % define the chord
+        name = C\textsuperscript{9}, % chord name
+        position = 2, % first fret position
+        finger = {2/5}, % fret/string:label
+        finger = {1/4}, % fret/string:label
+        finger = {2/3}, % fret/string:label
+        finger = {2/2}, % fret/string:label
+        mute = {1,6} % muted strings
     ]}
