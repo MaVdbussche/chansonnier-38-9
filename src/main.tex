@@ -19,42 +19,52 @@
 %\date{2020}
 % END TITLE
 
+\newindex{general}{idxfile} % Index by title and/or notable lyrics
 
 \begin{document}
     \renewcommand{\lyricfont}{\large}
     \renewcommand{\printchord}{\textit}
-    \afterpreludeskip=-18pt
-    \beforepostludeskip=-8pt
-    \noversenumbers
+    \renewcommand{\songchapter}{\chapter}
+    \renewcommand{\songsection}{\section}
+    %\afterpreludeskip=-18pt
+    %\beforepostludeskip=-8pt
+    \newchords{CCmajF}
 
-    \begin{songs}{}
+    \songchapter{Biblioth}
+
+    \input{chords-all.tex} % Bibliothèque d'accords
+
+    \songchapter{Musique}
+
+    \begin{songs}{general}
+
         \beginsong{Imagine}[by=John Lennon]
-        \beginverse
-        \emph{Intro, $\times$ 2}
-        \[C] \[Cmaj7] \[F]
+        \ifchorded
+        \beginverse*
+        {\nolyrics \textit{Intro:} \[C] \[Cmaj7] \[F] \rep{2}}
+        \endverse
+        \fi
+        \beginverse\memorize[CCmajF]
         \[C]Imagine there's \[Cmaj7]no \[F]heaven
-        \[C]It's easy if \[Cmaj7]you \[F]try
+        \[C]It's easy if |\[Cmaj7]you \[F]try
         \[C]No hell \[Cmaj7]below \[F]us
         \[C]Above us \[Cmaj7]only \[F]sky
         \endverse
         \endsong
 
+        \nextcol
         \beginsong{Imagine}[by=John Lennon]
         \beginverse
-        \emph{Intro, $\times$ 2}
-        \[C] \[Cmaj7] \[F]
+        {\nolyrics \textit{Intro:} ^Test ^Tast ^ret (x2)}
         \endverse
         \beginverse
-        \[C]Imagine there's \[Cmaj7]no \[F]heaven
-        \[C]It's easy if \[Cmaj7]you \[F]try
+        ^Imagine there's ^no ^heaven
+        It's easy if \[Cmaj7]you \[F]try
         \[C]No hell \[Cmaj7]below \[F]us
         \[C]Above us \[Cmaj7]only \[F]sky
         \endverse
         \endsong
     \end{songs}
 
-
-    \input{chords-all.tex} % Bibliothèque d'accords
-
-
+    \showindex{Index des chants}{general}
 \end{document}
