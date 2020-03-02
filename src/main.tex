@@ -1,7 +1,7 @@
 %! Author = Barasingha
 %! Date = 26/02/20
 
-\documentclass[a5paper]{scrbook}
+\documentclass[a4paper,twoside]{scrbook}
 
 \input{header.tex}
 
@@ -14,57 +14,93 @@
 \input{chords-G.tex}
 
 % BEGIN TITLE
-%\title{Chansonnier + Guitare}
-%\author{Barasingha}
-%\date{2020}
+\title{Chansonnier pour le camp}
+\author{Barasingha}
+\date{2020}
+\titlehead{Version guitare}
+\publishers{Barassolutions}
 % END TITLE
 
-\newindex{general}{idxfile} % Index by title and/or notable lyrics
+\newindex{english}{idxfile} % Index by title and/or notable lyrics
 
 \begin{document}
-    \renewcommand{\lyricfont}{\large}
-    \renewcommand{\printchord}{\textit}
-    \renewcommand{\songchapter}{\chapter}
-    \renewcommand{\songsection}{\section}
-    %\afterpreludeskip=-18pt
-    %\beforepostludeskip=-8pt
-    \newchords{CCmajF}
+  \input{definitions.tex}
 
-    \songchapter{Biblioth}
+  \newchords{CCmajF}
 
-    \input{chords-all.tex} % Bibliothèque d'accords
+  \maketitle
 
-    \songchapter{Musique}
+  \songchapter{Biblioth}
 
-    \begin{songs}{general}
+  \input{chords-all.tex} % Bibliothèque d'accords
 
-        \beginsong{Imagine}[by=John Lennon]
-        \ifchorded
-        \beginverse*
-        {\nolyrics \textit{Intro:} \[C] \[Cmaj7] \[F] \rep{2}}
-        \endverse
-        \fi
-        \beginverse\memorize[CCmajF]
-        \[C]Imagine there's \[Cmaj7]no \[F]heaven
-        \[C]It's easy if |\[Cmaj7]you \[F]try
-        \[C]No hell \[Cmaj7]below \[F]us
-        \[C]Above us \[Cmaj7]only \[F]sky
-        \endverse
-        \endsong
+  \songchapter{Musique}
 
-        \nextcol
-        \beginsong{Imagine}[by=John Lennon]
-        \beginverse
-        {\nolyrics \textit{Intro:} ^Test ^Tast ^ret (x2)}
-        \endverse
-        \beginverse
-        ^Imagine there's ^no ^heaven
-        It's easy if \[Cmaj7]you \[F]try
-        \[C]No hell \[Cmaj7]below \[F]us
-        \[C]Above us \[Cmaj7]only \[F]sky
-        \endverse
-        \endsong
-    \end{songs}
+  \begin{songs}{english}
 
-    \showindex{Index des chants}{general}
+    \beginsong{Imagine}[by=John Lennon]
+
+    \ifchorded
+    \beginverse*
+    {\nolyrics \textit{Intro:} \[C] \[Cmaj7] \[F] \rep{2}}
+    \endverse
+    \fi
+
+    \beginverse\memorize[CCmajF]
+    \[C]Imagine there's \[Cmaj7]no \[F]heaven
+    \[C]It's easy if |\[Cmaj7]you \[F]try
+    \[C]No hell \[Cmaj7]below \[F]us
+    \[C]Above us \[Cmaj7]only \[F]sky
+    \endverse
+    \endsong
+
+    %\nextcol
+    \beginsong{Imagine}[by=John Lennon]
+    \beginverse
+    {\nolyrics \textit{Intro:} ^Test ^Tast ^ret (x2)}
+    \endverse
+    \beginverse
+    ^Imagine there's ^no ^heaven
+    It's easy if \[Cmaj7]you \[F]try
+    \[C/G]No hell \[Cmaj7]below \[F]us
+    \[C]Above us \[Cmaj7]only \[F]sky
+    \endverse
+    \endsong
+    \beginscripture{}
+    This could be used to give indications/notes (for guitarists only ?)
+    \endscripture
+    %
+    \beginsong{Can't Help Falling in Love}[by=Elvis Presley]
+    \capo{II}
+    \musicnote{Vous pouvez jouer ce morceau en arpège pour coller au piano original (6 notes par accord)}
+    \beginverse*
+    {\nolyrics \textit{Intro:} \[C] \[G] \[Am] \[C] \[G] (quid du G??)}
+    \endverse
+    \beginverse
+    \[C]Wise \[Em]men \[Am]say, "Only fools rush in"
+    But I can't help falling in love with you
+    Shall I stay, would it be a sin?
+    If I can't help falling in love with you
+    \endverse
+    \beginchorus
+    Like the river flows
+    Shortly to the sea (surely ?)
+    Darling, so we go (so it goes ?)
+    Some things were meant to be (are meant ?)
+    \endchorus
+    \beginverse
+    Take my hand, take my whole life too
+    'Cause I can't help falling in love with you
+    \endverse
+    \beginverse
+    Take my hand, take my whole life too
+    'Cause I can't help falling in love with you
+    'Cause I can't help falling in love with you
+    But I can't help falling in love with you
+    \endverse
+    \endsong
+
+  \end{songs}
+
+  \showindex{Index des chants anglais}{english}
 \end{document}

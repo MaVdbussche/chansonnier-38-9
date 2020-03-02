@@ -13,7 +13,7 @@
 % (http://mirrors.ibiblio.org/CTAN/macros/latex/contrib/guitarchordschemes/guitarchordschemes_en.pdf)
 \usepackage{guitarchordschemes}
 
-% general chords parameters
+% General chords parameters
 \setchordscheme{
     x-unit=8pt, % chord size, x (before rotation)
     y-unit=8pt, % chord size, y (before rotation)
@@ -32,6 +32,50 @@
 }
 % END GUITAR CHORDS
 
-\usepackage{ifpdf}
+% BEGIN SONGS PACKAGE
 % For actual song texts. see (https://ctan.org/pkg/songs)
-\usepackage[chorded,showmeasures,noshading]{songs} % use [lyric] instead of [chorded] to omit all chords in output file
+\usepackage[chorded,showmeasures]{songs} % For guitar version
+%\usepackage[chorded,nomeasures,noscripture,noshading]{songs} % Intermediate version
+%\usepackage[lyric,nomeasures,noscripture,noshading]{songs} % For singing only version
+
+% Song numbering
+\settowidth\songnumwidth{\printsongnum{999}} % Width of the shaded box
+%\nosongnumbers
+
+% Verse numbering
+%\renewcommand{\theversenum}{\Roman{versenum}}
+\renewcommand{\printversenum}[1]{\itshape\normalsize#1.}
+\settowidth\versenumwidth{\printversenum{99\kern1mm}}
+%\noversenumbers
+
+% Song appearance
+%\renewcommand{\lyricfont}{\large} % Font style for lyrics
+\renewcommand{\notefont}{\slshape}
+
+
+\renewcommand{\printchord}{\textit} % Font style for chords names
+\renewcommand{\songchapter}{\chapter}
+\renewcommand{\songsection}{\section}
+\renewcommand{\capo}[1]{\iftranscapos\transpose{#1}\else\musicnote{Capo #1}\fi} % Command for "Capo X" blocs
+\afterpreludeskip=-10pt % Space after prelude
+%\beforepostludeskip=-8pt % Space before postlude
+
+% Font kerning correction
+% The following code fixes a corner case where '/', '(', and ')' characters in a superscripted chord name would overstrike the lyrics below.
+% Just feeling fancy here, not gonna lie
+\begin{comment}
+\renewcommand{\chordlocals}{
+    \catcode‘(\active
+    \catcode‘)\active
+    \catcode‘/\active}
+\newcommand{\smraise}[1]{\raise2pt\hbox{\small#1}}
+\newcommand{\myslash}{\smraise/}
+\newcommand{\myopenparen}{\smraise(}
+\newcommand{\mycloseparen}{\smraise)}
+{\chordlocals
+ \global\let(\myopenparen
+ \global\let)\mycloseparen
+ \global\let/\myslash}
+\end{comment}
+
+% END SONGS PACKAGE
