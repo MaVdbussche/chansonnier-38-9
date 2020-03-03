@@ -4,9 +4,16 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
-\usepackage[landscape]{geometry} % Landscape view
+%\usepackage{showframe} % TEMPORARY : useful for debugging layouts
+
+%\areaset[BCOR]{width}{height}
+\areaset[0mm]{200mm}{110mm} % Set the type area Default for a5paper is 210mm/148mm
+%\usepackage[landscape]{geometry} % Landscape view
+%\usepackage[width=154truemm,height=216truemm,center]{crop} % resizing margins
 
 \usepackage{comment} % adds {comment} environment
+
+%\usepackage{ifthen} % Conditional blocks
 
 % BEGIN GUITAR CHORDS
 % Doc available here : (http://tug.ctan.org/info/latex4musicians/latex4musicians.pdf)
@@ -15,20 +22,20 @@
 
 % General chords parameters
 \setchordscheme{
-    x-unit=8pt, % chord size, x (before rotation)
-    y-unit=8pt, % chord size, y (before rotation)
-    rotate=270,
-    finger-format=\footnotesize, % fingering font
-    position-format=\footnotesize, % position number font
-    name-format=\bfseries, % chord name font
-    name-below=true,
-    name-distance=.01em,
-    strings=6,
-    finger-radius={.3175},
-    ringing-style={circle, minimum width=16pt, draw, inner sep=0pt},
-    muted-style={cross out, draw, minimum size=5pt, inner sep=0pt, outer sep=0pt},
-    tuning={,,,,,},
-    restrict-bounding-box=false
+  x-unit=8pt, % chord size, x (before rotation)
+  y-unit=8pt, % chord size, y (before rotation)
+  rotate=270,
+  finger-format=\footnotesize, % fingering font
+  position-format=\footnotesize, % position number font
+  name-format=\bfseries, % chord name font
+  name-below=true,
+  name-distance=.01em,
+  strings=6,
+  finger-radius={.3175},
+  ringing-style={circle, minimum width=16pt, draw, inner sep=0pt},
+  muted-style={cross out, draw, minimum size=5pt, inner sep=0pt, outer sep=0pt},
+  tuning={,,,,,},
+  restrict-bounding-box=false
 }
 % END GUITAR CHORDS
 
@@ -52,30 +59,64 @@
 %\renewcommand{\lyricfont}{\large} % Font style for lyrics
 \renewcommand{\notefont}{\slshape}
 
+%\renewcommand{\notebgcolor}{red} % Notes background color
+%\renewcommand{\snmbgcolor}{red} % Song n° color
 
-\renewcommand{\printchord}{\textit} % Font style for chords names
+\renewcommand{\printchord}{\itshape\bfseries} % Font style for chords names
+
+\renewcommand{\sharpsymbol}{\ensuremath{^\sharp}}
+
+\afterpreludeskip=-10pt % Space after prelude
+\beforepostludeskip=-8pt % Space before postlude
+
+\renewcommand{\clineparams}{ % spacing between chords and lyrics
+  \baselineskip=9pt
+  \lineskiplimit=0.5pt
+  \lineskip=0.5pt
+}
+
+\renewcommand{\extendprelude}{
+  \showrefs\showauthors
+  {\bfseries\songcopyright\par}
+}
+\renewcommand{\extendpostlude}{
+  \songlicense\unskip
+}
+
+%\renewcommand{\lastcolglue}{0pt} % To make the last column to be flush with the bottom of the page
+
+% The default level is 3, which avoids column-breaks, page-breaks, and page-turnswithin songs whenever possible.
+% (Page-turns are page-breaks after odd-numberedpages in two-sided documents, or after all pages in one-sided documents.)
+% Level 2 avoids page-breaks and page-turns but allows column-breaks within songs.
+% Level 1 avoids only page-turns within songs. Level 0 turns off the song-positioning algorithm entirely.
+% This causes songs to be positioned wherever TEX thinks is best based on penalty settings (see \vvpenalty and \spenalty).
+\songpos{2}
+
 \renewcommand{\songchapter}{\chapter}
 \renewcommand{\songsection}{\section}
+
 \renewcommand{\capo}[1]{\iftranscapos\transpose{#1}\else\musicnote{Capo #1}\fi} % Command for "Capo X" blocs
-\afterpreludeskip=-10pt % Space after prelude
-%\beforepostludeskip=-8pt % Space before postlude
 
 % Font kerning correction
-% The following code fixes a corner case where '/', '(', and ')' characters in a superscripted chord name would overstrike the lyrics below.
+% The following code fixes a corner case where '/', '(', and ')' characters in a superscripted chord name would overstrike the lyrics below them.
 % Just feeling fancy here, not gonna lie
 \begin{comment}
-\renewcommand{\chordlocals}{
-    \catcode‘(\active
-    \catcode‘)\active
-    \catcode‘/\active}
-\newcommand{\smraise}[1]{\raise2pt\hbox{\small#1}}
+
+\newcommand{\smraise}[1]{\hbox{\small#1}}
+%\newcommand{\smraise}[1]{\raise2pt\hbox{\small#1}}
 \newcommand{\myslash}{\smraise/}
 \newcommand{\myopenparen}{\smraise(}
 \newcommand{\mycloseparen}{\smraise)}
-{\chordlocals
- \global\let(\myopenparen
- \global\let)\mycloseparen
- \global\let/\myslash}
+
+%\renewcommand{\chordlocals}{
+%  \catcode‘(=\active
+%  \catcode‘)=\active
+%  \catcode‘/=\active}
+\global\let(\myopenparen
+\global\let)\mycloseparen
+\global\let/\myslash
+
+%{\chordlocals}
 \end{comment}
 
 % END SONGS PACKAGE

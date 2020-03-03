@@ -1,7 +1,12 @@
 %! Author = Barasingha
 %! Date = 26/02/20
 
-\documentclass[a4paper,twoside]{scrbook}
+\documentclass[a5paper,twoside,
+                fontsize=10pt,
+                paper=landscape,
+                %BCOR=5mm, % binding correction
+                %DIV=12 % determines type area
+              ]{scrbook}
 
 \input{header.tex}
 
@@ -24,51 +29,49 @@
 \newindex{english}{idxfile} % Index by title and/or notable lyrics
 
 \begin{document}
-  \input{definitions.tex}
-
-  \newchords{CCmajF}
+  \songcolumns{2}
 
   \maketitle
 
-  \songchapter{Biblioth}
+  \songchapter{Bibliothèque d'accords}
 
   \input{chords-all.tex} % Bibliothèque d'accords
 
   \songchapter{Musique}
+  % image here ?
+  \newpage
 
   \begin{songs}{english}
 
     \beginsong{Imagine}[by=John Lennon]
-
     \ifchorded
     \beginverse*
     {\nolyrics \textit{Intro:} \[C] \[Cmaj7] \[F] \rep{2}}
     \endverse
     \fi
-
-    \beginverse\memorize[CCmajF]
+    \beginverse\memorize
     \[C]Imagine there's \[Cmaj7]no \[F]heaven
     \[C]It's easy if |\[Cmaj7]you \[F]try
     \[C]No hell \[Cmaj7]below \[F]us
-    \[C]Above us \[Cmaj7]only \[F]sky
+    \[C]Above us \[Cmaj7b]only \[F#]sky
     \endverse
     \endsong
 
-    %\nextcol
-    \beginsong{Imagine}[by=John Lennon]
-    \beginverse
-    {\nolyrics \textit{Intro:} ^Test ^Tast ^ret (x2)}
+    \beginsong{Santiano}[by=Hughes Aufray]
+    \beginverse\memorize
+    C'est \[Em]{un fameux} trois-mâts fin comme un oi\[D]seau
+    Hissez \[Em]haut! Santi\[D]ano!
+    \[Am]{Dix huit} noeuds quatre \[D]cent ton\[Bm]neaux
+    Je suis \[Em]{fier d'y} \[Bm]être \[Em]matelot
     \endverse
-    \beginverse
-    ^Imagine there's ^no ^heaven
-    It's easy if \[Cmaj7]you \[F]try
-    \[C/G]No hell \[Cmaj7]below \[F]us
-    \[C]Above us \[Cmaj7]only \[F]sky
-    \endverse
+    \beginchorus
+    Tiens ^{bon la} vague et tiens bon le ^vent
+    Hissez ^haut! Santi^ano!
+    ^{Si Dieu} veut, toujours ^droit de^vant
+    (Nous i^rons jusqu'^{à San} ^Francisco)
+    \endchorus
     \endsong
-    \beginscripture{}
-    This could be used to give indications/notes (for guitarists only ?)
-    \endscripture
+
     %
     \beginsong{Can't Help Falling in Love}[by=Elvis Presley]
     \capo{II}
