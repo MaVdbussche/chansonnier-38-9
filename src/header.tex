@@ -42,8 +42,8 @@
 % BEGIN SONGS PACKAGE
 % For actual song texts. see (https://ctan.org/pkg/songs)
 \usepackage[chorded,showmeasures]{songs} % For guitar version
-%\usepackage[chorded,nomeasures,noscripture,noshading]{songs} % Intermediate version
-%\usepackage[lyric,nomeasures,noscripture,noshading]{songs} % For singing only version
+%\usepackage[chorded,nomeasures,noscripture]{songs} % Intermediate version
+%\usepackage[lyric,nomeasures,noscripture]{songs} % For singing only version
 
 % Song numbering
 \settowidth\songnumwidth{\printsongnum{999}} % Width of the shaded box
@@ -66,11 +66,16 @@
 
 \renewcommand{\sharpsymbol}{\ensuremath{^\sharp}}
 
-\afterpreludeskip=-10pt % Space after prelude
-\beforepostludeskip=-8pt % Space before postlude
+\ifchorded
+\afterpreludeskip=-10pt
+\beforepostludeskip=-8pt
+\else
+\afterpreludeskip=-5pt % Space after prelude
+\beforepostludeskip=-5pt % Space before postlude
+\fi
 
 \renewcommand{\clineparams}{ % spacing between chords and lyrics
-  \baselineskip=9pt
+  \baselineskip=8pt
   \lineskiplimit=0.5pt
   \lineskip=0.5pt
 }
@@ -90,7 +95,7 @@
 % Level 2 avoids page-breaks and page-turns but allows column-breaks within songs.
 % Level 1 avoids only page-turns within songs. Level 0 turns off the song-positioning algorithm entirely.
 % This causes songs to be positioned wherever TEX thinks is best based on penalty settings (see \vvpenalty and \spenalty).
-\songpos{2}
+\songpos{3}
 
 \renewcommand{\songchapter}{\chapter}
 \renewcommand{\songsection}{\section}

@@ -29,6 +29,9 @@
 \newindex{english}{idxfile} % Index by title and/or notable lyrics
 
 \begin{document}
+  \newchords{CCmaj7F}
+  \newchords{FAmEDm7FC}
+
   \songcolumns{2}
 
   \maketitle
@@ -42,22 +45,58 @@
   \newpage
 
   \begin{songs}{english}
-
+    \pagepreludes % Title on top of page, spanning all width
     \beginsong{Imagine}[by=John Lennon]
     \ifchorded
-    \beginverse*
+    \beginverse* \memorize[CCmaj7F]
     {\nolyrics \textit{Intro:} \[C] \[Cmaj7] \[F] \rep{2}}
     \endverse
     \fi
-    \beginverse\memorize
-    \[C]Imagine there's \[Cmaj7]no \[F]heaven
-    \[C]It's easy if |\[Cmaj7]you \[F]try
-    \[C]No hell \[Cmaj7]below \[F]us
-    \[C]Above us \[Cmaj7b]only \[F#]sky
+    \beginverse \replay[CCmaj7F]
+    ^{ }Imagine there's ^no ^heaven \replay[CCmaj7F]
+    ^{ }It's easy if ^you ^try \replay[CCmaj7F]
+    ^{ }No hell ^below ^us \replay[CCmaj7F]
+    ^{ }Above us ^only ^sky
     \endverse
+    \beginverse \memorize[FAmEDm7FC]
+    \[F]{ }Imagine \[Am/E]all the \[Dm7]people \[F/C]
+    \[G]Living for \[C/G]to\[G7]day a-hah
+    \endverse
+    \beginverse \replay[CCmaj7F]
+    ^{ }Imagine there's ^no ^countries \replay[CCmaj7F]
+    ^{ }It isn't hard ^to ^do \replay[CCmaj7F]
+    ^{ }Nothing to kill ^or ^die for \replay[CCmaj7F]
+    ^{ }And no relig^ion ^too
+    \endverse
+    \beginverse \replay[FAmEDm7FC]
+    ^{ }Imagine ^all the ^people ^
+    ^Living life ^in ^peace - you-hou-ou-ou
+    \endverse
+    \beginchorus
+    \[F] You may \[G]say I'm a \[C]dreamer \[Cmaj7] \[E] \[E7]
+    \[F] But I'm \[G]not the only \[C]one \[Cmaj7] \[E] \[E7]
+    \[F] I hope some \[G]day you'll \[C]join us \[Cmaj7] \[E] \[E7]
+    \[F] And the \[G]world will \[C]be as one
+    \endchorus
+    \beginverse \replay[CCmaj7F]
+    ^{ }Imagine no ^pos^sessions \replay[CCmaj7F]
+    ^{ }I wonder if ^you ^can \replay[CCmaj7F]
+    ^{ }No need for greed ^or ^hunger \replay[CCmaj7F]
+    ^{ }A brotherhood ^of ^man
+    \endverse
+    \beginverse \replay[FAmEDm7FC]
+    ^{ }Imagine ^all the ^people ^
+    ^Sharing all ^the ^world - you-hou-ou-ou
+    \endverse
+    \beginchorus
+    \[F] You may \[G]say I'm a \[C]dreamer \[Cmaj7] \[E] \[E7]
+    \[F] But I'm \[G]not the only \[C]one \[Cmaj7] \[E] \[E7]
+    \[F] I hope some \[G]day you'll \[C]join us \[Cmaj7] \[E] \[E7]
+    \[F] And the \[G]world will \[C]be as one
+    \endchorus
     \endsong
 
-    \beginsong{Santiano}[by=Hughes Aufray]
+    \beginsong{Santiano}[by=Hugues Aufray]
     \beginverse\memorize
     C'est \[Em]{un fameux} trois-mâts fin comme un oi\[D]seau
     Hissez \[Em]haut! Santi\[D]ano!
@@ -70,15 +109,36 @@
     ^{Si Dieu} veut, toujours ^droit de^vant
     (Nous i^rons jusqu'^{à San} ^Francisco)
     \endchorus
+    \beginverse
+    Je ^pars pour de longs mois en laissant Mar^got
+    Hissez ^haut, Santi^ano
+    ^{D'y penser} j'avais ^{le }coeur ^gros
+    En dou^blant les ^feux de ^Saint-Malo
+    \endverse
+    \beginverse
+    On ^prétend que là-bas l'argent coule à ^flots
+    Hissez ^haut Santi^ano
+    ^{On trouve} l'or au fond ^des ruis^seaux
+    J'en ra^mène^{rai plu}^sieurs lingots
+    \endverse
+    \beginverse
+    Un ^jour je reviendrai chargé de ca^deaux
+    Hissez ^haut Santi^ano
+    ^{Au pays} j'irai ^voir Mar^got
+    A son ^doigt je ^passe^{rai l'}anneau
+    \endverse
+    \ifchorded\beginverse*
+    {\nolyrics \textit{Outro :} ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ \textit{(répéter en diminuant)}}
+    \endverse\fi
     \endsong
 
     %
     \beginsong{Can't Help Falling in Love}[by=Elvis Presley]
     \capo{II}
     \musicnote{Vous pouvez jouer ce morceau en arpège pour coller au piano original (6 notes par accord)}
-    \beginverse*
+    \ifchorded\beginverse*
     {\nolyrics \textit{Intro:} \[C] \[G] \[Am] \[C] \[G] (quid du G??)}
-    \endverse
+    \endverse\fi
     \beginverse
     \[C]Wise \[Em]men \[Am]say, "Only fools rush in"
     But I can't help falling in love with you
