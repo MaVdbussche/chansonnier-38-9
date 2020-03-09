@@ -15,6 +15,6 @@ clean:
 clean-aux:
 	rm $(shell find out/* -not -type d -not -path out/main.pdf)
 
-out/main.pdf: src/main.tex src/*.tex
+out/main.pdf: src/main.tex src/*.tex src/chords/*.tex src/songs/*.tex
 	@echo -e "\e[1;7;32m[=]\e[27m Compiling $< to $@ ...\e[0m"
 	latexmk $(LATEX_FLAGS) $(LATEX_OPT) -outdir=$(PWD)/$(@D) $< $(BASH_POSTPROCESSING)

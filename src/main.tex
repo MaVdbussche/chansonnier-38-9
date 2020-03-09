@@ -10,13 +10,13 @@
 
 \input{header.tex}
 
-\input{chords-A.tex}
-\input{chords-B.tex}
-\input{chords-C.tex}
-\input{chords-D.tex}
-\input{chords-E.tex}
-\input{chords-F.tex}
-\input{chords-G.tex}
+\input{chords/chords-A.tex}
+\input{chords/chords-B.tex}
+\input{chords/chords-C.tex}
+\input{chords/chords-D.tex}
+\input{chords/chords-E.tex}
+\input{chords/chords-F.tex}
+\input{chords/chords-G.tex}
 
 % BEGIN TITLE
 \title{Chansonnier pour le camp}
@@ -38,7 +38,7 @@
 
   \songchapter{Bibliothèque d'accords}
 
-  \input{chords-all.tex} % Bibliothèque d'accords
+  \input{chords/chords-all.tex} % Bibliothèque d'accords
 
   \songchapter{Musique}
   % image here ?
@@ -96,41 +96,7 @@
     \endchorus
     \endsong
 
-    \beginsong{Santiano}[by=Hugues Aufray]
-    \beginverse\memorize
-    C'est \[Em]{un fameux} trois-mâts fin comme un oi\[D]seau
-    Hissez \[Em]haut! Santi\[D]ano!
-    \[Am]{Dix huit} noeuds quatre \[D]cent ton\[Bm]neaux
-    Je suis \[Em]{fier d'y} \[Bm]être \[Em]matelot
-    \endverse
-    \beginchorus
-    Tiens ^{bon la} vague et tiens bon le ^vent
-    Hissez ^haut! Santi^ano!
-    ^{Si Dieu} veut, toujours ^droit de^vant
-    (Nous i^rons jusqu'^{à San} ^Francisco)
-    \endchorus
-    \beginverse
-    Je ^pars pour de longs mois en laissant Mar^got
-    Hissez ^haut, Santi^ano
-    ^{D'y penser} j'avais ^{le }coeur ^gros
-    En dou^blant les ^feux de ^Saint-Malo
-    \endverse
-    \beginverse
-    On ^prétend que là-bas l'argent coule à ^flots
-    Hissez ^haut Santi^ano
-    ^{On trouve} l'or au fond ^des ruis^seaux
-    J'en ra^mène^{rai plu}^sieurs lingots
-    \endverse
-    \beginverse
-    Un ^jour je reviendrai chargé de ca^deaux
-    Hissez ^haut Santi^ano
-    ^{Au pays} j'irai ^voir Mar^got
-    A son ^doigt je ^passe^{rai l'}anneau
-    \endverse
-    \ifchorded\beginverse*
-    {\nolyrics \textit{Outro :} ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ \textit{(répéter en diminuant)}}
-    \endverse\fi
-    \endsong
+    \input{songs/santiano.tex}
 
     %
     \beginsong{Can't Help Falling in Love}[by=Elvis Presley]
